@@ -1,0 +1,14 @@
+package:
+    name: volumina_viewer
+
+source:
+    path: ..
+
+requirements:
+    build:
+        - python 2.7*
+    run:
+        - python 2.7*
+        - numpy
+        - ilastik-meta
+        - vigra
