@@ -1,5 +1,6 @@
 package:
     name: volumina_viewer
+    version: 0.1
 
 source:
     path: ..
@@ -12,3 +13,4 @@ requirements:
         - numpy
         - ilastik-meta
         - vigra
+        - pyqt 4.11.4 
