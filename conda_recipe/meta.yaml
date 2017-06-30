@@ -24,8 +24,9 @@ requirements:
         - numpy
         - ilastik-meta
         - vigra
-        - pyqt 4.11.4 
+        - pyqt 4.11.4
         - futures
+        - qimage2ndarray
     test:
         imports:
             volumina_viewer
