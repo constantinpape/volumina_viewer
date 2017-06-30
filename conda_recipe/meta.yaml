@@ -14,3 +14,7 @@ requirements:
         - ilastik-meta
         - vigra
         - pyqt 4.11.4 
+        - futures
+    test:
+        imports:
+            volumina_viewer
