@@ -50,7 +50,7 @@ def volumina_double_layer(data, overlay):
 # plot n data layers
 def volumina_n_layer(data, labels = None):
 
-    app = QApplication (sys.argv)
+    app = QApplication(sys.argv)
     import volumina
     from volumina.api import Viewer
 
@@ -59,23 +59,24 @@ def volumina_n_layer(data, labels = None):
     v.showMaximized ()
 
     for ind, d in enumerate(data):
-    	layer_name = "layer_" + str(ind)
+        layer_name = "layer_" + str(ind)
+
         if labels is not None:
             layer_name = labels[ind]
-    	# get data type of the elements d, to determine
-    	# if we use a grayscale overlay (float32) or a randomcolors overlay (uint) for labels
-    	data_type = d.dtype
+            # get data type of the elements d, to determine
+            # if we use a grayscale overlay (float32) or a randomcolors overlay (uint) for labels
 
-    	if data_type is FloatType or data_type == np.float32 or data_type == np.float64:
-    	    v.addGrayscaleLayer(d , name = layer_name)
-    	else:
-    	    v.addRandomColorsLayer(d.astype(np.uint32), name = layer_name)
+        data_type = d.dtype
+        if data_type is FloatType or data_type == np.float32 or data_type == np.float64:
+            v.addGrayscaleLayer(d , name = layer_name)
+        else:
+            v.addRandomColorsLayer(d.astype(np.uint32), name = layer_name)
 
     app.exec_()
 
 
 # plot n data layers
-def volumina_flexible_layer(data, layer_types, labels = None):
+def volumina_flexible_layer(data, layer_types, labels=None):
 
     assert len(layer_types) == len(data)
 
@@ -88,23 +89,24 @@ def volumina_flexible_layer(data, layer_types, labels = None):
     v.showMaximized ()
 
     for i, d in enumerate(data):
-    	layer_name = "layer_" + str(i)
+        layer_name = "layer_" + str(i)
         if labels is not None:
             layer_name = labels[i]
-    	# get data type of the elements d, to determine
-    	# if we use a grayscale overlay (float32) or a randomcolors overlay (uint) for labels
-    	data_type = d.dtype
+
+        # get data type of the elements d, to determine
+        # if we use a grayscale overlay (float32) or a randomcolors overlay (uint) for labels
+        data_type = d.dtype
 
         if layer_types[i] == 'Grayscale':
-    	    v.addGrayscaleLayer(d , name = layer_name)
+            v.addGrayscaleLayer(d , name = layer_name)
         elif layer_types[i] == 'RandomColors':
-    	    v.addRandomColorsLayer(d.astype(np.uint32), name = layer_name)
+            v.addRandomColorsLayer(d.astype(np.uint32), name=layer_name)
         elif layer_types[i] == 'Red':
-    	    v.addAlphaModulatedLayer(d , name = layer_name, tintColor=QColor(255,0,0))
+            v.addAlphaModulatedLayer(d , name=layer_name, tintColor=QColor(255,0,0))
         elif layer_types[i] == 'Green':
-    	    v.addAlphaModulatedLayer(d , name = layer_name, tintColor=QColor(0,255,0))
+            v.addAlphaModulatedLayer(d , name=layer_name, tintColor=QColor(0,255,0))
         elif layer_types[i] == 'Blue':
-    	    v.addAlphaModulatedLayer(d , name = layer_name, tintColor=QColor(0,0,255))
+            v.addAlphaModulatedLayer(d , name=layer_name, tintColor=QColor(0,0,255))
         else:
             print layer_types[i]
             raise KeyError("Invalid Layer Type!")
