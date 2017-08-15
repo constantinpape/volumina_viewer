@@ -18,14 +18,14 @@ build:
 
 requirements:
     build:
-        - python 2.7*
+        - python {{PY_VER}}
     run:
-        - python 2.7*
+        - python {{PY_VER}}*
         - numpy
         - ilastik-meta
         - vigra
         - pyqt 4.11.4
-        - futures
+        - futures [py2k]
         - qimage2ndarray
     test:
         imports:
