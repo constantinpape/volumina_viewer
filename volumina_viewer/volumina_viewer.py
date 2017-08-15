@@ -1,8 +1,8 @@
 from __future__ import print_function
 
 import sys
-from PyQt4.QtCore import QTimer
-from PyQt4.QtGui import QApplication, QColor
+from PyQt5.QtCore import QTimer
+from PyQt5.QtGui import QApplication, QColor
 
 import vigra
 import numpy as np
