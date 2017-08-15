@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import sys
 from PyQt4.QtCore import QTimer
 from PyQt4.QtGui import QApplication, QColor
@@ -108,8 +110,7 @@ def volumina_flexible_layer(data, layer_types, labels=None):
         elif layer_types[i] == 'Blue':
             v.addAlphaModulatedLayer(d , name=layer_name, tintColor=QColor(0,0,255))
         else:
-            print layer_types[i]
-            raise KeyError("Invalid Layer Type!")
+            raise KeyError("Invalid Layer Type, %s!" % layer_types[i])
 
     app.exec_()
 

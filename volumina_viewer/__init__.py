@@ -1,1 +1,1 @@
-from volumina_viewer import volumina_n_layer, volumina_flexible_layer
+from .volumina_viewer import volumina_n_layer, volumina_flexible_layer
