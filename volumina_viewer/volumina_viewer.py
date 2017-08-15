@@ -70,7 +70,7 @@ def volumina_n_layer(data, labels = None):
             # if we use a grayscale overlay (float32) or a randomcolors overlay (uint) for labels
 
         data_type = d.dtype
-        if data_type is FloatType or data_type == np.float32 or data_type == np.float64:
+        if data_type == np.float32 or data_type == np.float64:
             v.addGrayscaleLayer(d , name = layer_name)
         else:
             v.addRandomColorsLayer(d.astype(np.uint32), name = layer_name)
