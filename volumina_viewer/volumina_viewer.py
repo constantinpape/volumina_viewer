@@ -1,9 +1,13 @@
 from __future__ import print_function
 
 import sys
-from PyQt5.QtCore import QTimer
-from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QApplication
+try:
+    from PyQt5.QtCore import QTimer
+    from PyQt5.QtGui import QColor
+    from PyQt5.QtWidgets import QApplication
+except ImportError:
+    from PyQt4.QtCore import QTimer
+    from PyQt4.QtGui import QColor, QApplication
 
 import vigra
 import numpy as np
