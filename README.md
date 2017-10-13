@@ -6,7 +6,7 @@ Lightweigth wrapper around volumina, the ilastik viewer backend.
 
 Install via conda (needs ilastik channel):
 ```
-conda install -c cpape -c ilastik-forge -c conda-forge volumina-viewer
+conda install -c cpape -c ilastik-forge -c conda-forge volumina_viewer
 ```
 
 ## Usage
