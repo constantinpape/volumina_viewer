@@ -25,6 +25,7 @@ requirements:
         - ilastik-meta
         - vigra
         - futures [py2k]
+        - pyqt
         - qimage2ndarray
     test:
         imports:
