@@ -27,6 +27,7 @@ requirements:
         - futures [py2k]
         - pyqt
         - qimage2ndarray
+        - future
     test:
         imports:
             volumina_viewer
