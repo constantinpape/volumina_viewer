@@ -28,6 +28,7 @@ requirements:
         - pyqt
         - qimage2ndarray
         - future
+        - h5py
     test:
         imports:
             volumina_viewer
